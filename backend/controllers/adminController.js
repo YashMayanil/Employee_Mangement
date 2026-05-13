@@ -53,7 +53,6 @@ exports.createManager = async (req, res) => {
 exports.getManagers = async (req, res) => {
 
     try {
-
         const managers = await User.find({
             role: "manager"
         });
@@ -71,7 +70,6 @@ exports.getManagers = async (req, res) => {
 exports.getEmployees = async (req, res) => {
 
     try {
-
         const employees = await User.find({
             role: "employee"
         }).populate("managerId", "name email");

@@ -203,7 +203,7 @@ function EmployeeDashboard() {
         return (
 
             new Date(item.date)
-            .toLocaleDateString() === today
+                .toLocaleDateString() === today
         );
     });
 
@@ -233,45 +233,45 @@ function EmployeeDashboard() {
                 }}
             >
 
-               <div>
+                <div>
 
-    <h1
-        style={{
-            fontSize: "40px",
-            marginBottom: "10px"
-        }}
-    >
-        Employee Dashboard
-    </h1>
+                    <h1
+                        style={{
+                            fontSize: "40px",
+                            marginBottom: "10px"
+                        }}
+                    >
+                        Employee Dashboard
+                    </h1>
 
-    <p
-        style={{
-            color: "#94a3b8",
-            fontSize: "18px"
-        }}
-    >
+                    <p
+                        style={{
+                            color: "#94a3b8",
+                            fontSize: "18px"
+                        }}
+                    >
 
-        Welcome,
-        {" "}
+                        Welcome,
+                        {" "}
 
-        <span
-            style={{
-                color: "#4ade80",
-                fontWeight: "bold"
-            }}
-        >
+                        <span
+                            style={{
+                                color: "#4ade80",
+                                fontWeight: "bold"
+                            }}
+                        >
 
-            {
-                employee
-                ? employee.name
-                : "Employee"
-            }
+                            {
+                                employee
+                                    ? employee.name
+                                    : "Employee"
+                            }
 
-        </span>
+                        </span>
 
-    </p>
+                    </p>
 
-</div>
+                </div>
 
 
 
@@ -346,9 +346,9 @@ function EmployeeDashboard() {
                         <div
                             style={{
                                 backgroundColor:
-                                todayAttendance.status === "Present"
-                                ? "#14532d"
-                                : "#7f1d1d",
+                                    todayAttendance.status === "Present"
+                                        ? "#14532d"
+                                        : "#7f1d1d",
 
                                 padding: "20px",
 
@@ -364,9 +364,9 @@ function EmployeeDashboard() {
                                 <span
                                     style={{
                                         color:
-                                        todayAttendance.status === "Present"
-                                        ? "#4ade80"
-                                        : "#f87171"
+                                            todayAttendance.status === "Present"
+                                                ? "#4ade80"
+                                                : "#f87171"
                                     }}
                                 >
 
@@ -455,13 +455,13 @@ function EmployeeDashboard() {
                                     <strong
                                         style={{
                                             color:
-                                            task.status === "Completed"
-                                            ? "#4ade80"
+                                                task.status === "Completed"
+                                                    ? "#4ade80"
 
-                                            : task.status === "In Progress"
-                                            ? "#38bdf8"
+                                                    : task.status === "In Progress"
+                                                        ? "#38bdf8"
 
-                                            : "#facc15"
+                                                        : "#facc15"
                                         }}
                                     >
 
@@ -575,15 +575,15 @@ function EmployeeDashboard() {
                             <span
                                 style={{
                                     padding:
-                                    "8px 15px",
+                                        "8px 15px",
 
                                     borderRadius:
-                                    "20px",
+                                        "20px",
 
                                     backgroundColor:
-                                    item.status === "Present"
-                                    ? "#22c55e"
-                                    : "#ef4444"
+                                        item.status === "Present"
+                                            ? "#22c55e"
+                                            : "#ef4444"
                                 }}
                             >
 

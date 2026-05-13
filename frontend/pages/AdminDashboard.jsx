@@ -8,31 +8,32 @@ function AdminDashboard() {
 
     const navigate = useNavigate();
 
+    //form data 
     const [name, setName] = useState("");
 
     const [email, setEmail] = useState("");
 
     const [password, setPassword] = useState("");
 
+    //manager and employee data states for fetching 
+
     const [managers, setManagers] = useState([]);
 
     const [employees, setEmployees] = useState([]);
 
+    //attandace data states for fetching 
     const [attendance, setAttendance] = useState([]);
 
+
+
+    // Task states for fetching
     const [tasks, setTasks] = useState([]);
 
-
-
-
-    // Task states
     const [taskTitle, setTaskTitle] = useState("");
 
-    const [taskDescription,
-    setTaskDescription] = useState("");
+    const [taskDescription,setTaskDescription] = useState("");
 
-    const [selectedManager,
-    setSelectedManager] = useState("");
+    const [selectedManager,setSelectedManager] = useState("");
 
 
 
@@ -241,10 +242,10 @@ function AdminDashboard() {
                     title: taskTitle,
 
                     description:
-                    taskDescription,
+                        taskDescription,
 
                     assignedTo:
-                    selectedManager
+                        selectedManager
                 },
 
                 {
@@ -277,7 +278,7 @@ function AdminDashboard() {
     const getTodayAttendance = (employeeId) => {
 
         const today =
-        new Date().toLocaleDateString();
+            new Date().toLocaleDateString();
 
         return attendance.find((item) => {
 
@@ -286,7 +287,7 @@ function AdminDashboard() {
                 item.employeeId?._id === employeeId &&
 
                 new Date(item.date)
-                .toLocaleDateString() === today
+                    .toLocaleDateString() === today
             );
         });
     };
@@ -298,7 +299,7 @@ function AdminDashboard() {
     const getManagerAttendance = (managerId) => {
 
         const today =
-        new Date().toLocaleDateString();
+            new Date().toLocaleDateString();
 
         return attendance.find((item) => {
 
@@ -309,7 +310,7 @@ function AdminDashboard() {
                 item.role === "manager" &&
 
                 new Date(item.date)
-                .toLocaleDateString() === today
+                    .toLocaleDateString() === today
             );
         });
     };
@@ -605,18 +606,11 @@ function AdminDashboard() {
                 {
                     managers.map((manager) => {
 
-                        const managerAttendance =
-                        getManagerAttendance(
-                            manager._id
-                        );
+                        const managerAttendance =getManagerAttendance(manager._id);
 
                         return (
 
-                            <div
-                                key={manager._id}
-
-                                style={cardStyle}
-                            >
+                            <div key={manager._id} style={cardStyle}>
 
                                 <h3>{manager.name}</h3>
 
@@ -632,16 +626,16 @@ function AdminDashboard() {
                                     <strong
                                         style={{
                                             color:
-                                            managerAttendance
-                                            ? "#4ade80"
-                                            : "#f87171"
+                                                managerAttendance
+                                                    ? "#4ade80"
+                                                    : "#f87171"
                                         }}
                                     >
 
                                         {
                                             managerAttendance
-                                            ? "Present"
-                                            : "Not Marked"
+                                                ? "Present"
+                                                : "Not Marked"
                                         }
 
                                     </strong>
@@ -674,7 +668,7 @@ function AdminDashboard() {
                     employees.map((emp) => {
 
                         const todayAttendance =
-                        getTodayAttendance(emp._id);
+                            getTodayAttendance(emp._id);
 
                         return (
 
@@ -709,16 +703,16 @@ function AdminDashboard() {
                                     <strong
                                         style={{
                                             color:
-                                            todayAttendance?.status === "Present"
-                                            ? "#4ade80"
-                                            : "#f87171"
+                                                todayAttendance?.status === "Present"
+                                                    ? "#4ade80"
+                                                    : "#f87171"
                                         }}
                                     >
 
                                         {
                                             todayAttendance
-                                            ? todayAttendance.status
-                                            : "Not Marked"
+                                                ? todayAttendance.status
+                                                : "Not Marked"
                                         }
 
                                     </strong>
@@ -783,9 +777,9 @@ function AdminDashboard() {
                                 <strong
                                     style={{
                                         color:
-                                        task.status === "Completed"
-                                        ? "#4ade80"
-                                        : "#facc15"
+                                            task.status === "Completed"
+                                                ? "#4ade80"
+                                                : "#facc15"
                                     }}
                                 >
 
@@ -885,7 +879,7 @@ const logoutButton = {
 const statsCard = {
 
     background:
-    "linear-gradient(135deg, #1e293b, #334155)",
+        "linear-gradient(135deg, #1e293b, #334155)",
 
     padding: "30px",
 

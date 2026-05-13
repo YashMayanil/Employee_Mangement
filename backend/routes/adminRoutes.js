@@ -13,33 +13,13 @@ const {
     getAttendance
 } = require("../controllers/adminController");
 
-router.post(
-    "/create-manager",
-    auth,
-    role("admin"),
-    createManager
-);
+router.post("/create-manager",auth,role("admin"),createManager);
 
-router.get(
-    "/managers",
-    auth,
-    role("admin"),
-    getManagers
-);
+router.get("/managers",auth,role("admin"),getManagers);
 
-router.get(
-    "/employees",
-    auth,
-    role("admin"),
-    getEmployees
-);
+router.get("/employees",auth,role("admin"),getEmployees);
 
-router.get(
-    "/attendance",
-    auth,
-    role("admin"),
-    getAttendance
-);
+router.get("/attendance",auth,role("admin"),getAttendance);
 
 
 module.exports = router;

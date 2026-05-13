@@ -22,9 +22,16 @@ exports.register = async (req, res) => {
             role
         });
 
+        const userResponse = {
+            _id: user._id,
+            name: user.name,
+            email: user.email,
+            role: user.role
+        };
+
         res.json({
             message: "User registered successfully",
-            user
+            user: userResponse
         });
 
     } catch (error) {
@@ -65,6 +72,7 @@ exports.login = async (req, res) => {
             });
         }
 
+        //generating token for authtication purpose
         const token = jwt.sign(
             {
                 id: user._id,

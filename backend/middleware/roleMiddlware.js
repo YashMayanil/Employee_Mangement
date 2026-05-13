@@ -8,7 +8,6 @@ module.exports = (...roles) => {
                 message: "Access denied"
             });
         }
-
         next();
     };
 };
